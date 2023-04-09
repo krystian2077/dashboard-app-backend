@@ -1,3 +1,4 @@
+// @ts-nocheck
 import express, { json } from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
@@ -12,7 +13,9 @@ import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
 import User from "./models/User.js";
-import { dataUser } from "./data/index.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
 
 dotenv.config();
 const app = express();
@@ -40,5 +43,8 @@ mongoose
     app.listen(PORT, () =>
       console.log(`Server Port: http://localhost:${PORT}`)
     );
+    // ONLY ADD DATA ONE TIME
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProduct);
   })
   .catch((error) => console.log(`${error} did not connect`));
