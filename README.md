@@ -68,7 +68,7 @@ Install the latest version of npm in your runtime.
    ```
 3. Run npm script
    ```sh
-   npm start
+   npm run start
    ```
 
 ## 🐾 Roadmap
